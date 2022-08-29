@@ -1,0 +1,46 @@
+<main class="main">
+  <p></p>
+  <div class="job" *ngFor="let job of jobs">
+    <div class="job__info info">
+      <div class="info__img">
+        <img src="{{ job.img }}" alt="Company Logo" />
+      </div>
+      <div class="info__info">
+        <div class="info__header">
+          <span class="info__header-name" (click)="openJob(job)">{{
+            job.company
+          }}</span>
+          <span *ngIf="checkDate(job)" class="info__header-tag new">NEW!</span>
+          <span *ngIf="false" class="info__header-tag featured">FEATURED</span>
+        </div>
+        <div class="info__title">{{ job.title }}</div>
+        <ul class="info__about-list">
+          <li *ngIf="!checkDate(job)" class="info__about-item">
+            {{ getPostDate(job) }} days ago
+          </li>
+          <li class="info__about-item">{{ job.workTime }}</li>
+          <li class="info__about-item">{{ job.location }}</li>
+        </ul>
+      </div>
+    </div>
+    <ul class="job__data data-list">
+      <li
+        class="data-list__item"
+        (click)="onAddFilter(data)"
+        *ngFor="let data of job.datas"
+      >
+        {{ data }}
+      </li>
+    </ul>
+    <div class="job__favorites">
+      <img
+        [src]="job.heartSrc"
+        alt="favorites"
+        (click)="onClickChangeHeart(job)"
+      />
+    </div>
+  </div>
+  <!-- <ng-container *ngIf="!jobs.length">
+    <h1 class="nothing">Nothing Found</h1>
+  </ng-container> -->
+</main>

@@ -1,0 +1,36 @@
+.wrapper {
+  max-width: 1148px;
+  margin: 0 auto;
+}
+.job {
+  margin-top: 80px;
+  // .job__logo
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+
+  // .job__title
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  // .job__information
+
+  &__information {
+    font-size: 18px;
+  }
+}

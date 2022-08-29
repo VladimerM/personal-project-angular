@@ -1,0 +1,20 @@
+<div class="filter-container">
+  <div *ngIf="filters.length" class="filter">
+    <ul class="filter__list">
+      <li class="filter__list-item" *ngFor="let item of filters; let i = index">
+        <span class="filter__list-item-name">{{ item }}</span>
+        <span class="filter__list-clear" (click)="deleteFilterItem(i)"
+          ><i class="fa-solid fa-xmark"></i
+        ></span>
+      </li>
+    </ul>
+    <div class="filter__clear" (click)="clearFilter()">Clear</div>
+  </div>
+
+  <form class="search" [formGroup]="searchFormGroup">
+    <input type="text" formControlName="search" />
+    <button (click)="addFilter()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <header class="header">
+    <a class="logo" routerLink="main">Frix</a>
+    <ul class="nav">
+      <li class="register">
+        <a routerLink="favorites">Favorites <span></span></a>
+      </li>
+      <li *ngIf="!isLogged()" class="register">
+        <a routerLink="login">Log In</a>
+      </li>
+      <li *ngIf="isLogged()" class="register">
+        <a routerLink="user">{{ userName }}</a>
+      </li>
+      <li *ngIf="isLogged()" class="register" (click)="logOut()">
+        <a>Log Out</a>
+      </li>
+    </ul>
+  </header>
+</div>
+
+<router-outlet></router-outlet>

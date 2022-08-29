@@ -1,0 +1,15 @@
+<header></header>
+
+<main class="main">
+  <div class="main__filter">
+    <app-filter
+      [filters]="filters"
+      (deleteFilterItemIndex)="deleteFilterItem($event)"
+      (_clearFilter)="clearFilter()"
+      (filterItem)="addFilter($event)"
+    ></app-filter>
+  </div>
+  <div class="main__list">
+    <app-list [jobs]="filteredJobs" (filterItem)="addFilter($event)"></app-list>
+  </div>
+</main>
