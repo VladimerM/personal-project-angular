@@ -1,0 +1,101 @@
+<div class="wrapper">
+  <form class="login" [formGroup]="loginFormGroup">
+    <h1 class="login__title">Log In</h1>
+    <div class="login__inputs">
+      <div
+        class="form__group field"
+        [ngClass]="{
+          error:
+            !this.loginFormGroup.get('email')?.valid &&
+            this.loginFormGroup.get('email')?.touched
+        }"
+      >
+        <input
+          type="email"
+          class="login__input form__field"
+          placeholder="Email"
+          formControlName="email"
+          id="name"
+        />
+        <label for="name" class="form__label">Email</label>
+        <p
+          *ngIf="
+            this.loginFormGroup.get('email')?.value === '' &&
+            this.loginFormGroup.get('email')?.touched
+          "
+          class="error__message"
+        >
+          Email is Required
+        </p>
+        <p
+          *ngIf="
+            !this.loginFormGroup.get('email')?.valid &&
+            this.loginFormGroup.get('email')?.value !== ''
+          "
+          class="error__message"
+        >
+          Please enter a valid email address
+        </p>
+      </div>
+      <div
+        class="form__group field"
+        [ngClass]="{
+          error:
+            !this.loginFormGroup.get('password')?.valid &&
+            this.loginFormGroup.get('password')?.touched
+        }"
+      >
+        <input
+          [type]="passwordType"
+          class="login__input form__field"
+          id="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <label for="password" class="form__label">Password</label>
+
+        <span class="show-password" (click)="showPassword()"
+          ><i
+            class="fa-solid"
+            [ngClass]="{
+              'fa-eye': !showPasswordIcon,
+              'fa-eye-slash': showPasswordIcon
+            }"
+          ></i
+        ></span>
+        <p
+          *ngIf="
+            this.loginFormGroup.get('password')?.value === '' &&
+            this.loginFormGroup.get('password')?.touched
+          "
+          class="error__message"
+        >
+          Password is Required
+        </p>
+        <p
+          *ngIf="
+            this.loginFormGroup.get('password')?.touched &&
+            this.loginFormGroup.get('password')?.value !== '' &&
+            this.loginFormGroup.get('password')?.value.length < 8
+          "
+          class="error__message"
+        >
+          Password must be at least 8 characters <br />
+          in length
+        </p>
+      </div>
+
+      <p class="to-register">
+        New to Best-Page? <a routerLink="/register"> Create Account</a>
+      </p>
+      <button
+        class="login__submit"
+        (click)="loginUser()"
+        [disabled]="!this.loginFormGroup.valid"
+        type="submit"
+      >
+        Log In
+      </button>
+    </div>
+  </form>
+</div>

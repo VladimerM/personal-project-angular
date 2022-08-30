@@ -12,7 +12,7 @@ export interface Ijob {
   date: number;
 }
 
-export interface IuserRespone {
+export interface IuserResponse {
   accessToken: string;
   user: Iuser;
 }
@@ -20,6 +20,7 @@ export interface IuserRespone {
 export interface Iuser {
   email: string;
   id: number;
-  jobs: [];
+  jobs: Ijob[];
   name: string;
+  password: string;
 }

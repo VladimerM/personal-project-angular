@@ -15,9 +15,7 @@
         </div>
         <div class="info__title">{{ job.title }}</div>
         <ul class="info__about-list">
-          <li *ngIf="!checkDate(job)" class="info__about-item">
-            {{ getPostDate(job) }} days ago
-          </li>
+          <li class="info__about-item">{{ getPostDate(job) }}</li>
           <li class="info__about-item">{{ job.workTime }}</li>
           <li class="info__about-item">{{ job.location }}</li>
         </ul>

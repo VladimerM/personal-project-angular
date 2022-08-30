@@ -12,7 +12,7 @@ import { JobsService } from '../../services/jobs.service';
 })
 export class JobComponent implements OnInit {
   job$ = new BehaviorSubject<Ijob>({} as Ijob);
-  jobId: any;
+  jobId!: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,7 +20,7 @@ export class JobComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.jobId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.jobId = +this.activatedRoute.snapshot.paramMap.get('id')!;
     this.jobsService.getJob(this.jobId).subscribe((value) => {
       this.job$.next(value);
     });

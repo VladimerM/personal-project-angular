@@ -15,8 +15,8 @@ import { JobsService } from '../../services/jobs.service';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent implements OnInit {
-  jobs: BehaviorSubject<any> = new BehaviorSubject('');
-  filteredJobs: any;
+  jobs: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
+  filteredJobs!: Ijob[];
   filters: any = [];
 
   constructor(private jobsService: JobsService) {}

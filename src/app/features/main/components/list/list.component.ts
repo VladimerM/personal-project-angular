@@ -17,7 +17,7 @@ import { JobsService } from '../../services/jobs.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent implements OnInit {
-  @Input() jobs: any = [];
+  @Input() jobs: Ijob[] = [] as Ijob[];
   @Output() filterItem = new EventEmitter<string>();
 
   heartFilled = false;
@@ -57,17 +57,17 @@ export class ListComponent implements OnInit {
 
   checkDate(job: Ijob): boolean {
     if (Date.now() - job.date < 86400000) {
-      console.log(Date.now() - job.date);
-
       return true;
     } else {
-      console.log(Date.now() - job.date);
-
       return false;
     }
   }
 
   getPostDate(job: Ijob) {
-    return Math.floor((Date.now() - job.date) / 86400000);
+    if (Math.floor((Date.now() - job.date) / 86400000) < 1) {
+      return Math.floor((Date.now() - job.date) / 3600000) + ' hours ago';
+    } else {
+      return Math.floor((Date.now() - job.date) / 86400000) + ' days ago';
+    }
   }
 }
