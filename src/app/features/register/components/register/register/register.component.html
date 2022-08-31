@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <form class="register" [formGroup]="registerFormGroup">
+    <h1 class="register__title">Register</h1>
+    <div class="register__inputs">
+      <input
+        type="email"
+        class="register__input"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <input
+        type="text"
+        class="register__input"
+        placeholder="Company Name"
+        formControlName="name"
+      />
+      <input
+        type="password"
+        class="register__input"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <input
+        type="password"
+        class="register__input"
+        placeholder="Confirm Password"
+        formControlName="confPassword"
+      />
+      <p class="to-login">
+        New to Best-Page? <a routerLink="/login"> Create Account</a>
+      </p>
+      <button
+        class="register__submit"
+        [disabled]="!this.registerFormGroup.valid"
+        (click)="registerUser()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

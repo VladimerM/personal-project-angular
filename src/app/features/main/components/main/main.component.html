@@ -10,6 +10,9 @@
     ></app-filter>
   </div>
   <div class="main__list">
-    <app-list [jobs]="filteredJobs" (filterItem)="addFilter($event)"></app-list>
+    <app-list
+      [jobs]="(jobs | async)!"
+      (filterItem)="addFilter($event)"
+    ></app-list>
   </div>
 </main>

@@ -1,4 +1,5 @@
-<main class="main">
+<div class="main">
+  <h1 class="job__title">Your vacancies</h1>
   <div class="job" *ngFor="let job of jobs">
     <div class="job__info info">
       <div class="info__img">
@@ -9,35 +10,27 @@
           <span class="info__header-name" (click)="openJob(job)">{{
             job.company
           }}</span>
-          <span *ngIf="checkDate(job)" class="info__header-tag new">NEW!</span>
-          <span *ngIf="false" class="info__header-tag featured">FEATURED</span>
+          <span *ngIf="true" class="info__header-tag new">NEW!</span>
+          <span *ngIf="true" class="info__header-tag featured">FEATURED</span>
         </div>
         <div class="info__title">{{ job.title }}</div>
         <ul class="info__about-list">
-          <li class="info__about-item">{{ getPostDate(job) }}</li>
+          <li class="info__about-item">1d ago</li>
           <li class="info__about-item">{{ job.workTime }}</li>
           <li class="info__about-item">{{ job.location }}</li>
         </ul>
       </div>
     </div>
     <ul class="job__data data-list">
-      <li
-        class="data-list__item"
-        (click)="onAddFilter(data)"
-        *ngFor="let data of job.datas"
-      >
+      <li class="data-list__item" *ngFor="let data of job.datas">
         {{ data }}
       </li>
     </ul>
-    <div class="job__favorites">
-      <img
-        [src]="job.heartSrc"
-        alt="favorites"
-        (click)="onClickChangeHeart(job)"
-      />
+    <div class="job__close">
+      <span (click)="onClickDelete(job)"
+        ><i class="fa-solid fa-xmark"></i
+      ></span>
+      <!-- <img [src]="job.heartSrc" alt="favorites"  /> -->
     </div>
   </div>
-  <!-- <ng-container *ngIf="!jobs.length">
-    <h1 class="nothing">Nothing Found</h1>
-  </ng-container> -->
-</main>
+</div>

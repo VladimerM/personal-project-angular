@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -12,7 +13,7 @@ import { JobsService } from '../../services/jobs.service';
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent implements OnInit {
   jobs: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
@@ -21,18 +22,29 @@ export class MainComponent implements OnInit {
 
   constructor(private jobsService: JobsService) {}
 
+  today = formatDate(new Date(), 'yyyy-MM-dd', 'en').toString().split('-');
+
   ngOnInit(): void {
+    console.log(this.today);
+
     this.jobsService.getJobs().subscribe((value) => {
-      this.jobs.next(value);
-      this.filteredJobs = this.jobs.getValue();
-      this.filteredJobs.sort((a: Ijob, b: Ijob) => {
-        if (a.date < b.date) {
-          return 1;
-        } else {
-          return -1;
+      value.map((item: any) => {
+        let itemDeadline = item.deadline.toString().split('-');
+        if (itemDeadline[0] <= this.today[0]) {
+          if (itemDeadline[1] <= this.today[1]) {
+            if (itemDeadline[2] < this.today[2]) {
+              this.deleteJob(item.id);
+            }
+          }
         }
       });
+      this.jobs.next(value);
+      this.filteredJobs = this.jobs.getValue();
     });
+  }
+
+  deleteJob(id: number) {
+    this.jobsService.deleteJob(id).subscribe();
   }
 
   addFilter(filter: string) {
@@ -53,16 +65,22 @@ export class MainComponent implements OnInit {
 
   filter() {
     if (this.filters.length === 0) {
-      this.filteredJobs = this.jobs.getValue();
+      this.jobsService.getJobs().subscribe((value) => {
+        this.jobs.next(value);
+      });
     } else {
-      this.filteredJobs = this.jobs.getValue().filter((item: any) => {
-        let isFiltered = true;
-        for (let data of this.filters) {
-          if (!item.datas.includes(data)) {
-            isFiltered = false;
-          }
-        }
-        return isFiltered;
+      this.jobsService.getJobs().subscribe((value) => {
+        this.jobs.next(
+          value.filter((item: any) => {
+            let isFiltered = true;
+            for (let data of this.filters) {
+              if (!item.datas.includes(data)) {
+                isFiltered = false;
+              }
+            }
+            return isFiltered;
+          })
+        );
       });
     }
   }

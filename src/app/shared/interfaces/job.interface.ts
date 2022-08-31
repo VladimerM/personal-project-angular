@@ -10,6 +10,7 @@ export interface Ijob {
   id: number;
   heartFilled: boolean;
   date: number;
+  deadline: string;
 }
 
 export interface IuserResponse {

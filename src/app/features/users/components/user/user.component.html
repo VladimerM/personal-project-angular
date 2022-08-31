@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <br />
+  <br /><br />
+  <app-user-form (jobInfo)="addJob($event)"></app-user-form>
+  <app-user-jobs
+    [jobs]="(userJobs | async)!"
+    (jobInfo)="onClickDelete($event)"
+  ></app-user-jobs>
+</div>

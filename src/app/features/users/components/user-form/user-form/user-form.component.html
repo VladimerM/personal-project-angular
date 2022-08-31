@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="container">
+    <form action="" class="form" [formGroup]="jobFormGroup">
+      <div class="form__main-info">
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Company Name"
+          formControlName="company"
+        />
+        <input
+          type="url"
+          class="form__input"
+          placeholder="Image URL"
+          formControlName="img"
+        />
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Job Title"
+          formControlName="title"
+        />
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Worktime"
+          formControlName="workTime"
+        />
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Location"
+          formControlName="location"
+        />
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Tags"
+          formControlName="datas"
+        />
+        <div class="form__date">
+          <input
+            type="date"
+            name=""
+            id=""
+            class="form__input"
+            formControlName="deadline"
+          />
+          <!-- [min]="today" -->
+          <span>deadline</span>
+        </div>
+      </div>
+      <div class="form__textarea">
+        <textarea
+          placeholder="describe your job"
+          formControlName="information"
+        ></textarea>
+      </div>
+
+      <button class="form__submit" (click)="addJob()" type="submit">
+        Submit
+      </button>
+      <!-- [disabled]="jobFormGroup.invalid" -->
+    </form>
+  </div>
+</div>
