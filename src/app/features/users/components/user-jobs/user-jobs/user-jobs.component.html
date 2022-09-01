@@ -10,14 +10,13 @@
           <span class="info__header-name" (click)="openJob(job)">{{
             job.company
           }}</span>
-          <span *ngIf="true" class="info__header-tag new">NEW!</span>
-          <span *ngIf="true" class="info__header-tag featured">FEATURED</span>
         </div>
         <div class="info__title">{{ job.title }}</div>
         <ul class="info__about-list">
-          <li class="info__about-item">1d ago</li>
+          <li class="info__about-item">{{ getPostDate(job) }}</li>
           <li class="info__about-item">{{ job.workTime }}</li>
           <li class="info__about-item">{{ job.location }}</li>
+          <li class="info__about-item">{{ job.deadline }}</li>
         </ul>
       </div>
     </div>
@@ -30,7 +29,6 @@
       <span (click)="onClickDelete(job)"
         ><i class="fa-solid fa-xmark"></i
       ></span>
-      <!-- <img [src]="job.heartSrc" alt="favorites"  /> -->
     </div>
   </div>
 </div>

@@ -47,6 +47,9 @@ export class UserFormComponent implements OnInit {
     changedDatas.forEach((item: string) => {
       item.toLowerCase();
     });
+    if (changedDatas.includes(' ')) {
+      changedDatas.splice(changedDatas.indexOf(''), 1);
+    }
     jobObj.datas = changedDatas;
     jobObj.date = Date.now();
     this.jobInfo.emit(jobObj);

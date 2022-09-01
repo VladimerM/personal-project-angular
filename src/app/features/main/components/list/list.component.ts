@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
 import { JobsService } from '../../services/jobs.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-list',
@@ -69,5 +70,11 @@ export class ListComponent implements OnInit {
     } else {
       return Math.floor((Date.now() - job.date) / 86400000) + ' days ago';
     }
+  }
+
+  page = 1;
+
+  onTableDataChange(event: number) {
+    this.page = event;
   }
 }

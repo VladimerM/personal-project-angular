@@ -10,7 +10,7 @@ export class JobsService {
 
   getJobs() {
     return this.http.get<any>(
-      'http://localhost:3000/jobs?_sort=date&_order=desc,?_page=1&_limit=12'
+      'http://localhost:3000/jobs?_sort=date&_order=desc'
     );
   }
 

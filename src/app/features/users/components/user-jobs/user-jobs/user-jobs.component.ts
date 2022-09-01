@@ -35,4 +35,12 @@ export class UserJobsComponent implements OnInit {
   onClickDelete(job: any) {
     this.jobInfo.emit(job);
   }
+
+  getPostDate(job: Ijob) {
+    if (Math.floor((Date.now() - job.date) / 86400000) < 1) {
+      return Math.floor((Date.now() - job.date) / 3600000) + ' hours ago';
+    } else {
+      return Math.floor((Date.now() - job.date) / 86400000) + ' days ago';
+    }
+  }
 }

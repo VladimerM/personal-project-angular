@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JobComponent } from './components/job/job.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [MainComponent, ListComponent, FilterComponent, JobComponent],
@@ -14,6 +15,7 @@ import { JobComponent } from './components/job/job.component';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     RouterModule.forChild([
       {
         path: '',

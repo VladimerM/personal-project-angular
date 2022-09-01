@@ -17,7 +17,6 @@ import { JobsService } from '../../services/jobs.service';
 })
 export class MainComponent implements OnInit {
   jobs: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
-  filteredJobs!: Ijob[];
   filters: any = [];
 
   constructor(private jobsService: JobsService) {}
@@ -39,7 +38,6 @@ export class MainComponent implements OnInit {
         }
       });
       this.jobs.next(value);
-      this.filteredJobs = this.jobs.getValue();
     });
   }
 

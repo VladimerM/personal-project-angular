@@ -1,5 +1,8 @@
 <main class="main">
-  <div class="job" *ngFor="let job of jobs">
+  <div
+    class="job"
+    *ngFor="let job of jobs | paginate: { itemsPerPage: 10, currentPage: page }"
+  >
     <div class="job__info info">
       <div class="info__img">
         <img src="{{ job.img }}" alt="Company Logo" />
@@ -17,6 +20,7 @@
           <li class="info__about-item">{{ getPostDate(job) }}</li>
           <li class="info__about-item">{{ job.workTime }}</li>
           <li class="info__about-item">{{ job.location }}</li>
+          <li class="info__about-item">Deadline: {{ job.deadline }}</li>
         </ul>
       </div>
     </div>
@@ -37,7 +41,9 @@
       />
     </div>
   </div>
-  <!-- <ng-container *ngIf="!jobs.length">
-    <h1 class="nothing">Nothing Found</h1>
-  </ng-container> -->
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  ></pagination-controls>
 </main>
