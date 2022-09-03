@@ -28,4 +28,12 @@ export class HeaderComponent implements OnInit {
   isLogged() {
     return this.loginService.isLogged;
   }
+
+  burgerOpened = false;
+
+  toggleBurger() {
+    console.log(1);
+
+    this.burgerOpened = !this.burgerOpened;
+  }
 }

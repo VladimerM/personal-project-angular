@@ -1,33 +1,102 @@
 .container {
   background-color: rgb(4, 99, 99);
+  position: relative;
+  z-index: 3;
 }
 
 .header {
   max-width: 1148px;
-  padding: 15px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  padding: 15px;
+  position: relative;
+
   .logo {
     color: #fff;
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
+    position: relative;
+    z-index: 2;
   }
 
-  .nav {
-    display: flex;
-    gap: 20px;
-  }
-
-  .register {
-    display: flex;
-    justify-content: flex-end;
+  .menu__item {
     a {
       color: #fff;
       font-size: 24px;
       font-weight: 400;
       cursor: pointer;
+    }
+    &.user {
+      text-transform: capitalize;
+    }
+  }
+  @media (min-width: 500px) {
+    .header__menu {
+      display: flex;
+    }
+    .menu__list {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu__item {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .header__menu {
+      position: absolute;
+      display: block;
+      background-color: rgb(4, 99, 99);
+      z-index: 1;
+      top: -1000px;
+      left: 0;
+      width: 100vw;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      transition: 0.3s;
+
+      &.active {
+        top: 0px;
+      }
+      .menu__list {
+        display: block;
+        gap: 20px;
+      }
+
+      .menu__item {
+        margin-bottom: 15px;
+        a {
+          color: #fff;
+          font-size: 24px;
+          font-weight: 400;
+          cursor: pointer;
+        }
+        &.user {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 500px) {
+      display: block;
+    }
+    color: #fff;
+    i {
+      font-size: 24px;
+      vertical-align: middle;
     }
   }
 }

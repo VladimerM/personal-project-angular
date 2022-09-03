@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
-import { IuserJob } from '../../../interfaces/user.interfaces';
+import { IuserJob } from '../../interfaces/user.interfaces';
 
 @Component({
   selector: 'app-user-form',

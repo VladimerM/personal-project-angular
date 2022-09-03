@@ -31,11 +31,13 @@
   // .form__textarea
 
   &__textarea {
+    width: 100%;
+    text-align: center;
     textarea {
       border: 2px solid grey;
       border-radius: 5px;
       padding: 5px;
-      width: 600px;
+      width: 60%;
       height: 200px;
       font-size: 16px;
     }

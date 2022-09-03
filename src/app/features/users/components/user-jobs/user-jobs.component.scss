@@ -1,9 +1,19 @@
+header {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(4, 99, 99);
+}
+
 .main {
   max-width: 1148px;
   margin: 0 auto;
   font-family: arial;
   @media (max-width: 440px) {
     padding: 15px;
+  }
+  pagination-controls {
+    text-align: center;
+    margin: 20px 0;
   }
 }
 
@@ -18,41 +28,33 @@
   justify-content: space-between;
   position: relative;
 
-  @media (max-width: 790px) {
+  @media (max-width: 840px) {
     flex-wrap: wrap;
     justify-content: center;
   }
   margin-bottom: 15px;
 
-  // .job__info
-
-  &__info {
+  &__title {
+    font-size: 34px;
+    text-align: center;
   }
 
-  // .job__data
-
-  &__data {
-  }
-
-  &__close {
+  &__delete {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-    color: red;
-
+    color: rgb(4, 99, 99);
     i {
       transition: 0.3s;
-      font-size: 18px;
       &:hover {
-        color: rgb(117, 2, 2);
+        color: red;
       }
     }
-  }
-
-  &__title {
-    text-align: center;
-    font-size: 36px;
+    img {
+      height: 20px;
+      width: 20px;
+    }
   }
 }
 .info {
@@ -60,7 +62,7 @@
   align-items: center;
   gap: 25px;
 
-  @media (max-width: 790px) {
+  @media (max-width: 840px) {
     flex-wrap: wrap;
     padding: 0 0 15px 5px;
     border-bottom: 2px solid rgb(175, 174, 174);
@@ -85,11 +87,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
-
-  // .info__header
-
-  &__header {
   }
 
   // .info__header-name
@@ -131,6 +128,7 @@
 
   &__about-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
   }
@@ -139,17 +137,17 @@
 
   &__about-item {
     color: rgb(123, 142, 142);
-
     font-size: 14px;
   }
 }
 
 .data-list {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
   @media (max-width: 830px) {
+    flex-wrap: wrap;
+
     gap: 10px;
   }
   // .data-list__item

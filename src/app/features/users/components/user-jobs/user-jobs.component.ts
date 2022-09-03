@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
-import { IuserJob } from '../../../interfaces/user.interfaces';
+import { IuserJob } from '../../interfaces/user.interfaces';
 
 @Component({
   selector: 'app-user-jobs',
