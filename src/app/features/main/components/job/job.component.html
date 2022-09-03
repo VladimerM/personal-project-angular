@@ -1,12 +1,26 @@
 <div *ngIf="job$ | async as job">
   <div class="wrapper">
     <div class="job">
-      <div class="job__logo">
-        <img src="{{ job.img }}" alt="" />
-        <span>{{ job.company }}</span>
+      <div class="job__main">
+        <div class="job__main-left">
+          <div class="job__logo">
+            <span>{{ job.company }}</span>
+          </div>
+          <div class="job__title">{{ job.title }}</div>
+          <div class="job__location">{{ job.location }}</div>
+          <div class="job__location">{{ job.workTime }}</div>
+        </div>
+
+        <div class="job__main-right">
+          <img src="{{ job.img }}" alt="" />
+        </div>
       </div>
-      <div class="job__title">{{ job.title }}</div>
+
+      <div class="info-title">Detailed Information</div>
+
       <div class="job__information">{{ job.information }}</div>
+
+      <br />
     </div>
   </div>
 </div>
