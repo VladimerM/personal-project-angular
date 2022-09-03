@@ -8,16 +8,19 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent implements OnInit {
-  @Input() filters: Ijob[] = [] as Ijob[];
+  // @Input() filters: string[] = [] as string[];
+  @Input() filters = new BehaviorSubject<string[]>([]);
+
   @Output() deleteFilterItemIndex = new EventEmitter<number>();
   @Output() _clearFilter = new EventEmitter<number>();
   @Output() filterItem = new EventEmitter<string>();
@@ -41,6 +44,8 @@ export class FilterComponent implements OnInit {
   }
 
   addFilter() {
+    console.log(this.filters);
+
     this.filterItem.emit(this.searchFormGroup.get('search')?.value);
     this.searchFormGroup.get('search')?.setValue('');
   }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, catchError } from 'rxjs';
 import { IuserResponse } from 'src/app/shared/interfaces/job.interface';
 
 @Injectable({

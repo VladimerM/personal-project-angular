@@ -1,14 +1,21 @@
 <div class="filter-container">
   <div class="filter">
     <ul class="filter__list">
-      <li class="filter__list-item" *ngFor="let item of filters; let i = index">
+      <li
+        class="filter__list-item"
+        *ngFor="let item of filters | async; let i = index"
+      >
         <span class="filter__list-item-name">{{ item }}</span>
         <span class="filter__list-clear" (click)="deleteFilterItem(i)"
           ><i class="fa-solid fa-xmark"></i
         ></span>
       </li>
     </ul>
-    <div class="filter__clear" *ngIf="filters.length" (click)="clearFilter()">
+    <div
+      class="filter__clear"
+      *ngIf="filters.getValue().length"
+      (click)="clearFilter()"
+    >
       Clear
     </div>
   </div>

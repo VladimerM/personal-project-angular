@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/components/auth/login/login.component';
 import { RegisterComponent } from './auth/components/auth/register/register.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     ReactiveFormsModule,

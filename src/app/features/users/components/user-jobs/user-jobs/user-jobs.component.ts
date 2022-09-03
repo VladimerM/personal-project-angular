@@ -14,7 +14,7 @@ import { IuserJob } from '../../../interfaces/user.interfaces';
   selector: 'app-user-jobs',
   templateUrl: './user-jobs.component.html',
   styleUrls: ['./user-jobs.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserJobsComponent implements OnInit {
   @Input() jobs: Ijob[] = [] as Ijob[];

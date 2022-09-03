@@ -14,7 +14,7 @@ import { IuserJob } from '../../../interfaces/user.interfaces';
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserFormComponent implements OnInit {
   jobFormGroup = new FormGroup<any>('');

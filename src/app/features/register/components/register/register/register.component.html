@@ -14,20 +14,21 @@
         placeholder="Company Name"
         formControlName="name"
       />
-      <input
-        type="password"
-        class="register__input"
-        placeholder="Password"
-        formControlName="password"
-      />
-      <input
-        type="password"
-        class="register__input"
-        placeholder="Confirm Password"
-        formControlName="confPassword"
-      />
+      <ng-container formGroupName="passwordGroup"
+        ><input
+          type="password"
+          class="register__input"
+          placeholder="Password"
+          formControlName="password" />
+        <input
+          type="password"
+          class="register__input"
+          placeholder="Confirm Password"
+          formControlName="confPassword"
+      /></ng-container>
+
       <p class="to-login">
-        New to Best-Page? <a routerLink="/login"> Create Account</a>
+        Already have an account? <a routerLink="/login"> Log In</a>
       </p>
       <button
         class="register__submit"

@@ -3,7 +3,7 @@
 <main class="main">
   <div class="main__filter">
     <app-filter
-      [filters]="filters"
+      [filters]="filters!"
       (deleteFilterItemIndex)="deleteFilterItem($event)"
       (_clearFilter)="clearFilter()"
       (filterItem)="addFilter($event)"

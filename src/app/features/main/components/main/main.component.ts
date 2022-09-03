@@ -17,7 +17,7 @@ import { JobsService } from '../../services/jobs.service';
 })
 export class MainComponent implements OnInit {
   jobs: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
-  filters: any = [];
+  filters = new BehaviorSubject<string[]>([]);
 
   constructor(private jobsService: JobsService) {}
 
@@ -46,23 +46,28 @@ export class MainComponent implements OnInit {
   }
 
   addFilter(filter: string) {
-    if (!this.filters.includes(filter.toLowerCase()))
-      this.filters.push(filter.toLowerCase());
+    if (!this.filters.getValue().includes(filter.toLowerCase())) {
+      // this.filters.push(filter.toLowerCase());
+      let arr = this.filters.getValue();
+      arr.push(filter.toLowerCase());
+      this.filters.next(arr);
+    }
     this.filter();
   }
 
   deleteFilterItem(i: number) {
-    this.filters.splice(i, 1);
+    let arr = this.filters.getValue().splice(i, 1);
+    this.filters.next(arr);
     this.filter();
   }
 
   clearFilter() {
-    this.filters = [];
+    this.filters.next([]);
     this.filter();
   }
 
   filter() {
-    if (this.filters.length === 0) {
+    if (this.filters.getValue().length === 0) {
       this.jobsService.getJobs().subscribe((value) => {
         this.jobs.next(value);
       });
@@ -71,7 +76,7 @@ export class MainComponent implements OnInit {
         this.jobs.next(
           value.filter((item: any) => {
             let isFiltered = true;
-            for (let data of this.filters) {
+            for (let data of this.filters.getValue()) {
               if (!item.datas.includes(data)) {
                 isFiltered = false;
               }
