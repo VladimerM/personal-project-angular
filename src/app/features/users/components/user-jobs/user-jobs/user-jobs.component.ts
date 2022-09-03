@@ -22,17 +22,13 @@ export class UserJobsComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      console.log(this.jobs);
-    }, 3000);
-  }
+  ngOnInit(): void {}
 
   openJob(job: Ijob) {
     this.router.navigate([`/main/jobs/${job.id}`]);
   }
 
-  onClickDelete(job: any) {
+  onClickDelete(job: Ijob) {
     this.jobInfo.emit(job);
   }
 

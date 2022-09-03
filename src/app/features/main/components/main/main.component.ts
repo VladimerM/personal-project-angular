@@ -24,10 +24,8 @@ export class MainComponent implements OnInit {
   today = formatDate(new Date(), 'yyyy-MM-dd', 'en').toString().split('-');
 
   ngOnInit(): void {
-    console.log(this.today);
-
     this.jobsService.getJobs().subscribe((value) => {
-      value.map((item: any) => {
+      value.map((item: Ijob) => {
         let itemDeadline = item.deadline.toString().split('-');
         if (itemDeadline[0] <= this.today[0]) {
           if (itemDeadline[1] <= this.today[1]) {
@@ -45,9 +43,8 @@ export class MainComponent implements OnInit {
     this.jobsService.deleteJob(id).subscribe();
   }
 
-  addFilter(filter: string) {
+  addFilter(filter: string): void {
     if (!this.filters.getValue().includes(filter.toLowerCase())) {
-      // this.filters.push(filter.toLowerCase());
       let arr = this.filters.getValue();
       arr.push(filter.toLowerCase());
       this.filters.next(arr);
@@ -55,18 +52,18 @@ export class MainComponent implements OnInit {
     this.filter();
   }
 
-  deleteFilterItem(i: number) {
+  deleteFilterItem(i: number): void {
     let arr = this.filters.getValue().splice(i, 1);
     this.filters.next(arr);
     this.filter();
   }
 
-  clearFilter() {
+  clearFilter(): void {
     this.filters.next([]);
     this.filter();
   }
 
-  filter() {
+  filter(): void {
     if (this.filters.getValue().length === 0) {
       this.jobsService.getJobs().subscribe((value) => {
         this.jobs.next(value);
@@ -74,7 +71,7 @@ export class MainComponent implements OnInit {
     } else {
       this.jobsService.getJobs().subscribe((value) => {
         this.jobs.next(
-          value.filter((item: any) => {
+          value.filter((item: Ijob) => {
             let isFiltered = true;
             for (let data of this.filters.getValue()) {
               if (!item.datas.includes(data)) {

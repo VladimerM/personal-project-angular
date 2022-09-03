@@ -11,19 +11,17 @@ import { LoginService } from '../../services/login.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  loginFormGroup = new FormGroup<any>('');
+  loginFormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(7),
+    ]),
+  });
   passwordType = 'password';
   constructor(private loginService: LoginService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.loginFormGroup = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(7),
-      ]),
-    });
-  }
+  ngOnInit(): void {}
 
   loginUser() {
     this.loginService

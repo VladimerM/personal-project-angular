@@ -2,7 +2,7 @@
   <div class="favorites">
     <div class="favorites__title">Favorites</div>
     <main class="main">
-      <div class="job" *ngFor="let job of favorites">
+      <div class="job" *ngFor="let job of favorites | async">
         <div class="job__info info">
           <div class="info__img">
             <img src="{{ job.img }}" alt="Company Logo" />
@@ -36,7 +36,7 @@
           />
         </div>
       </div>
-      <ng-container *ngIf="!favorites.length">
+      <ng-container *ngIf="!favorites.getValue().length">
         <h1 class="nothing">Nothing Found</h1>
       </ng-container>
     </main>

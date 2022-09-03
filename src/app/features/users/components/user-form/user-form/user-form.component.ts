@@ -34,9 +34,6 @@ export class UserFormComponent implements OnInit {
       information: new FormControl('', [Validators.required]),
       deadline: new FormControl('', [Validators.required]),
     });
-    this.jobFormGroup.get('deadline')?.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
   }
 
   addJob() {

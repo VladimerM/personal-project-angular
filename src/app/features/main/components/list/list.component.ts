@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
     }
   }
 
-  onClickChangeHeart(job: Ijob) {
+  onClickChangeHeart(job: Ijob): void {
     if (!job.heartFilled) {
       job.heartSrc = 'assets/images/icons/filled-heart.svg';
       job.heartFilled = !job.heartFilled;
@@ -48,11 +48,11 @@ export class ListComponent implements OnInit {
     }
   }
 
-  onAddFilter(data: string) {
+  onAddFilter(data: string): void {
     this.filterItem.emit(data);
   }
 
-  openJob(job: Ijob) {
+  openJob(job: Ijob): void {
     this.router.navigate([`/main/jobs/${job.id}`]);
   }
 
@@ -64,7 +64,7 @@ export class ListComponent implements OnInit {
     }
   }
 
-  getPostDate(job: Ijob) {
+  getPostDate(job: Ijob): string {
     if (Math.floor((Date.now() - job.date) / 86400000) < 1) {
       return Math.floor((Date.now() - job.date) / 3600000) + ' hours ago';
     } else {
@@ -74,7 +74,7 @@ export class ListComponent implements OnInit {
 
   page = 1;
 
-  onTableDataChange(event: number) {
+  onTableDataChange(event: number): void {
     this.page = event;
   }
 }

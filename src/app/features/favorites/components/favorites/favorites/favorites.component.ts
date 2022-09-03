@@ -4,6 +4,8 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Ijob } from 'src/app/shared/interfaces/job.interface';
 import { FavoritesService } from '../../../services/favorites.service';
 
 @Component({
@@ -13,19 +15,17 @@ import { FavoritesService } from '../../../services/favorites.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FavoritesComponent implements OnInit {
-  favorites: any = [];
-  favoritesIds: any = [];
+  favorites: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
+  favoritesIds: number[] = [];
 
-  constructor(
-    private favoriteService: FavoritesService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  constructor(private favoriteService: FavoritesService) {}
 
   ngOnInit(): void {
     for (let favorite of JSON.parse(localStorage.getItem('favorites')!)) {
       this.favoriteService.getFavorite(favorite).subscribe((value) => {
-        this.favorites.push(value);
-        this.cdr.detectChanges();
+        let arr = this.favorites.getValue();
+        arr.push(value);
+        this.favorites.next(arr);
       });
     }
     this.favoritesIds = JSON.parse(localStorage.getItem('favorites')!);

@@ -11,6 +11,7 @@ export interface Ijob {
   heartFilled: boolean;
   date: number;
   deadline: string;
+  owner: string;
 }
 
 export interface IuserResponse {
@@ -21,7 +22,6 @@ export interface IuserResponse {
 export interface Iuser {
   email: string;
   id: number;
-  jobs: Ijob[];
   name: string;
   password: string;
 }

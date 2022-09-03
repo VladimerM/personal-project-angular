@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Iuser } from 'src/app/shared/interfaces/job.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class RegisterService {
   constructor(private http: HttpClient) {}
 
-  registerUser(user: any) {
-    return this.http.post('http://localhost:3000/register', user);
+  registerUser(user: Iuser) {
+    return this.http.post<Iuser>('http://localhost:3000/register', user);
   }
 }

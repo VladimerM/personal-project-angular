@@ -10,21 +10,21 @@ import { LoginService } from '../../login/services/login.service';
 export class UsersService {
   constructor(private http: HttpClient, private loginService: LoginService) {}
 
-  postJob(job: any) {
-    return this.http.post<any>('http://localhost:3000/jobs', job);
+  postJob(job: Ijob) {
+    return this.http.post<Ijob>('http://localhost:3000/jobs', job);
   }
 
-  editUser(id: number, user: any) {
-    return this.http.put(`http://localhost:3000/users/${id}`, user);
-  }
+  // editUser(id: number, user: Iuser) {
+  //   return this.http.put<Iuser>(`http://localhost:3000/users/${id}`, user);
+  // }
 
-  checkUser(user: any) {
-    return this.http.post(`http://localhost:3000/login`, user).pipe(
-      catchError(() => {
-        return new BehaviorSubject(false);
-      })
-    );
-  }
+  // checkUser(user: any) {
+  //   return this.http.post(`http://localhost:3000/login`, user).pipe(
+  //     catchError(() => {
+  //       return new BehaviorSubject(false);
+  //     })
+  //   );
+  // }
 
   getJobs(user: string) {
     return this.http.get<Ijob[]>(
@@ -32,6 +32,6 @@ export class UsersService {
     );
   }
   deleteJob(id: number) {
-    return this.http.delete<any>(`http://localhost:3000/jobs/${id}`);
+    return this.http.delete<Ijob>(`http://localhost:3000/jobs/${id}`);
   }
 }
