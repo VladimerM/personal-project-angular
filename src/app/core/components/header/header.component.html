@@ -1,7 +1,7 @@
 <div class="container" [ngClass]="{ active: burgerOpened }">
   <header class="header">
     <a class="logo" routerLink="main">Frix</a>
-    <div class="header__burger" (click)="toggleBurger()">
+    <div class="header__burger" (click)="blockScroll()">
       <i class="fa-solid fa-bars" *ngIf="!burgerOpened"></i>
       <i class="fa-solid fa-xmark" *ngIf="burgerOpened"></i>
     </div>
@@ -11,10 +11,14 @@
           <a routerLink="favorites">Favorites <span></span></a>
         </li>
         <li *ngIf="!isLogged()" class="menu__item" (click)="toggleBurger()">
-          <a routerLink="login">Log In</a>
+          <a routerLink="login"
+            ><i class="fa-solid fa-circle-user"></i>Log In</a
+          >
         </li>
         <li *ngIf="isLogged()" class="menu__item user" (click)="toggleBurger()">
-          <a routerLink="user">{{ userName }}</a>
+          <a routerLink="user"
+            ><i class="fa-solid fa-circle-user"></i> {{ userName }}</a
+          >
         </li>
         <li
           *ngIf="isLogged()"

@@ -44,6 +44,14 @@
     .menu__item {
       display: flex;
       justify-content: flex-end;
+      a {
+        transition: 0.3s;
+      }
+      &:hover {
+        a {
+          color: rgb(226, 139, 26);
+        }
+      }
     }
   }
 
@@ -56,7 +64,7 @@
       top: -1000px;
       left: 0;
       width: 100vw;
-      height: 50vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -69,13 +77,14 @@
       .menu__list {
         display: block;
         gap: 20px;
+        list-style: none;
       }
 
       .menu__item {
         margin-bottom: 15px;
         a {
-          color: #fff;
-          font-size: 24px;
+          color: rgb(0, 0, 0);
+          font-size: 44px;
           font-weight: 400;
           cursor: pointer;
         }

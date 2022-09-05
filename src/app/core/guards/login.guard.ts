@@ -25,6 +25,7 @@ export class LoginGuard implements CanLoad {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     if (this.loginService.isLogged) {
+      // this.router.navigate(['/user']);
       return true;
     } else {
       this.router.navigate(['/login']);

@@ -18,7 +18,10 @@
 
       <div class="info-title">Detailed Information</div>
 
-      <div class="job__information">{{ job.information }}</div>
+      <div
+        class="job__information"
+        [innerHTML]="job.information | safeHtml"
+      ></div>
 
       <br />
     </div>

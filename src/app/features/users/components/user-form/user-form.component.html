@@ -45,22 +45,25 @@
             id=""
             class="form__input"
             formControlName="deadline"
+            [min]="today"
           />
-          <!-- [min]="today" -->
           <span>deadline</span>
         </div>
       </div>
-      <div class="form__textarea">
-        <textarea
-          placeholder="describe your job"
-          formControlName="information"
-        ></textarea>
-      </div>
-
-      <button class="form__submit" (click)="addJob()" type="submit">
+      <div class="info-title">Write detailed info about your vacancie</div>
+      <editor
+        formControlName="information"
+        [init]="{ plugins: 'lists link image table code help wordcount' }"
+      ></editor>
+      <div class="form__textarea"></div>
+      <button
+        class="form__submit"
+        (click)="addJob()"
+        type="submit"
+        [disabled]="jobFormGroup.invalid"
+      >
         Submit
       </button>
-      <!-- [disabled]="jobFormGroup.invalid" -->
     </form>
   </div>
 </div>

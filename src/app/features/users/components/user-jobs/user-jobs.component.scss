@@ -23,7 +23,7 @@ header {
   padding: 40px 20px 20px;
   border-radius: 5px;
   position: relative;
-  box-shadow: rgb(91 164 164 / 30%) 0px 5px 15px;
+  box-shadow: -2px -1px 44px 10px rgba(52, 79, 120, 0.63);
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -37,6 +37,7 @@ header {
   &__title {
     font-size: 34px;
     text-align: center;
+    margin-bottom: 35px;
   }
 
   &__delete {
@@ -45,6 +46,7 @@ header {
     right: 10px;
     cursor: pointer;
     color: rgb(4, 99, 99);
+    font-size: 18px;
     i {
       transition: 0.3s;
       &:hover {
@@ -61,8 +63,9 @@ header {
   display: flex;
   align-items: center;
   gap: 25px;
-
-  @media (max-width: 840px) {
+  width: 50%;
+  @media (max-width: 790px) {
+    width: 100%;
     flex-wrap: wrap;
     padding: 0 0 15px 5px;
     border-bottom: 2px solid rgb(175, 174, 174);
@@ -145,9 +148,9 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
   @media (max-width: 830px) {
     flex-wrap: wrap;
-
     gap: 10px;
   }
   // .data-list__item
@@ -160,9 +163,9 @@ header {
     border-radius: 5px;
     font-weight: 700;
     cursor: pointer;
-    font-size: rem(13);
     transition: 0.4s;
     text-transform: uppercase;
+    list-style: none;
     &:hover {
       color: #fff;
       background-color: rgb(91, 164, 164);

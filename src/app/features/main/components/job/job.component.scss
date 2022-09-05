@@ -1,6 +1,10 @@
 .wrapper {
   max-width: 1148px;
   margin: 0 auto;
+  padding: 20px;
+}
+ul li {
+  list-style: circle;
 }
 .job {
   margin-top: 80px;
@@ -9,6 +13,7 @@
 
   &__main {
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 25px;
@@ -47,6 +52,11 @@
 
   &__information {
     font-size: 18px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 16px 17px 71px 15px rgba(52, 79, 120, 0.69);
+    -webkit-box-shadow: 16px 17px 71px 15px rgba(52, 79, 120, 0.69);
+    -moz-box-shadow: 16px 17px 71px 15px rgba(52, 79, 120, 0.69);
   }
 
   .info-title {

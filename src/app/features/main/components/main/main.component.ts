@@ -53,7 +53,8 @@ export class MainComponent implements OnInit {
   }
 
   deleteFilterItem(i: number): void {
-    let arr = this.filters.getValue().splice(i, 1);
+    let arr = this.filters.getValue();
+    arr.splice(i, 1);
     this.filters.next(arr);
     this.filter();
   }

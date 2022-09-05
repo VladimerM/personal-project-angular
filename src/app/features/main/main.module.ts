@@ -8,9 +8,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JobComponent } from './components/job/job.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
-  declarations: [MainComponent, ListComponent, FilterComponent, JobComponent],
+  declarations: [MainComponent, ListComponent, FilterComponent, JobComponent, SafeHtmlPipe],
   imports: [
     CommonModule,
     HttpClientModule,

@@ -28,19 +28,18 @@
     font-size: 16px;
   }
 
+  .info-title {
+    font-size: 22px;
+    align-self: flex-start;
+    color: rgb(85, 85, 85);
+  }
   // .form__textarea
 
-  &__textarea {
+  editor {
     width: 100%;
     text-align: center;
-    textarea {
-      border: 2px solid grey;
-      border-radius: 5px;
-      padding: 5px;
-      width: 60%;
-      height: 200px;
-      font-size: 16px;
-    }
+    border: 1px solid grey;
+    border-radius: 5px;
   }
 
   &__submit {

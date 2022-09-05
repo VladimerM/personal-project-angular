@@ -76,5 +76,10 @@ export class ListComponent implements OnInit {
 
   onTableDataChange(event: number): void {
     this.page = event;
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }

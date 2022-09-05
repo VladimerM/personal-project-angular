@@ -57,9 +57,7 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
-ul li {
-  list-style: none;
-}
+
 img {
   vertical-align: top;
 }
@@ -75,4 +73,8 @@ h6 {
 
 body {
   font-family: Montserrat;
+
+  &.lock {
+    overflow: hidden;
+  }
 }

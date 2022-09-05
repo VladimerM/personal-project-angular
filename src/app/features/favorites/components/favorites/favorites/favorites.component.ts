@@ -38,4 +38,20 @@ export class FavoritesComponent implements OnInit {
     localStorage.setItem('favorites', JSON.stringify(this.favoritesIds));
     this.favoriteService.editJobs(job.id, job).subscribe();
   }
+
+  checkDate(job: Ijob): boolean {
+    if (Date.now() - job.date < 86400000) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  getPostDate(job: Ijob): string {
+    if (Math.floor((Date.now() - job.date) / 86400000) < 1) {
+      return Math.floor((Date.now() - job.date) / 3600000) + ' hours ago';
+    } else {
+      return Math.floor((Date.now() - job.date) / 86400000) + ' days ago';
+    }
+  }
 }

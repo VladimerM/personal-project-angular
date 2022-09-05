@@ -32,8 +32,14 @@ export class HeaderComponent implements OnInit {
   burgerOpened = false;
 
   toggleBurger() {
-    console.log(1);
-
+    this.burgerOpened ? (document.body.className = '') : null;
     this.burgerOpened = !this.burgerOpened;
+  }
+
+  blockScroll() {
+    this.burgerOpened = !this.burgerOpened;
+    this.burgerOpened
+      ? (document.body.className = 'lock')
+      : (document.body.className = '');
   }
 }
