@@ -19,9 +19,16 @@ export interface IuserResponse {
   user: Iuser;
 }
 
-export interface Iuser {
-  email: string;
+export interface Iuser extends Iregister {
   id: number;
+}
+export interface IloginUser {
+  email: string;
+  password: string;
+}
+
+export interface Iregister {
+  email: string;
   name: string;
   password: string;
 }

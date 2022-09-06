@@ -27,6 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   position: relative;
+  gap: 20px;
 
   @media (max-width: 840px) {
     flex-wrap: wrap;
@@ -64,7 +65,8 @@ header {
   align-items: center;
   gap: 25px;
   width: 50%;
-  @media (max-width: 790px) {
+
+  @media (max-width: 840px) {
     width: 100%;
     flex-wrap: wrap;
     padding: 0 0 15px 5px;
@@ -146,12 +148,15 @@ header {
 
 .data-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
+  width: 50%;
   @media (max-width: 830px) {
-    flex-wrap: wrap;
-    gap: 10px;
+    // gap: 10px;
+  }
+  @media (max-width: 840px) {
+    width: 100%;
   }
   // .data-list__item
 
@@ -159,24 +164,15 @@ header {
     background-color: #fff;
     color: rgb(91, 164, 164);
     border: 0;
-    padding: 9px;
+    padding: 9px 9px 9px 0;
     border-radius: 5px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.4s;
     text-transform: uppercase;
-    list-style: none;
     &:hover {
       color: #fff;
       background-color: rgb(91, 164, 164);
     }
   }
-}
-
-.nothing {
-  font-size: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Iuser } from 'src/app/shared/interfaces/job.interface';
+import { catchError, of } from 'rxjs';
+import { Iregister, Iuser } from 'src/app/shared/interfaces/job.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,14 @@ import { Iuser } from 'src/app/shared/interfaces/job.interface';
 export class RegisterService {
   constructor(private http: HttpClient) {}
 
-  registerUser(user: Iuser) {
-    return this.http.post<Iuser>('http://localhost:3000/register', user);
+  registerUser(user: Iregister) {
+    return this.http
+      .post<Iregister>('http://localhost:3000/register', user)
+      .pipe(
+        catchError(() => {
+          alert('Failed to register user, please try again later');
+          return of(user);
+        })
+      );
   }
 }

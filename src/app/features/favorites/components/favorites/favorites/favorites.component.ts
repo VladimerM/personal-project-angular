@@ -4,6 +4,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
 import { FavoritesService } from '../../../services/favorites.service';
@@ -18,13 +19,16 @@ export class FavoritesComponent implements OnInit {
   favorites: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
   favoritesIds: number[] = [];
 
-  constructor(private favoriteService: FavoritesService) {}
+  constructor(
+    private favoriteService: FavoritesService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     for (let favorite of JSON.parse(localStorage.getItem('favorites')!)) {
       this.favoriteService.getFavorite(favorite).subscribe((value) => {
         let arr = this.favorites.getValue();
-        arr.push(value);
+        arr.unshift(value);
         this.favorites.next(arr);
       });
     }
@@ -53,5 +57,9 @@ export class FavoritesComponent implements OnInit {
     } else {
       return Math.floor((Date.now() - job.date) / 86400000) + ' days ago';
     }
+  }
+
+  openJob(job: Ijob): void {
+    this.router.navigate([`/main/jobs/${job.id}`]);
   }
 }

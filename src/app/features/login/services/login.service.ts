@@ -1,17 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError } from 'rxjs';
-import { IuserResponse } from 'src/app/shared/interfaces/job.interface';
+import { BehaviorSubject, catchError, of } from 'rxjs';
+import {
+  IloginUser,
+  Iuser,
+  IuserResponse,
+} from 'src/app/shared/interfaces/job.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  loggedUser: any;
+  loggedUser!: IuserResponse;
   isLogged = false;
   constructor(private http: HttpClient) {}
 
-  loginUser(user: any) {
-    return this.http.post<IuserResponse>('http://localhost:3000/login', user);
+  loginUser(user: IloginUser) {
+    return this.http
+      .post<IuserResponse>('http://localhost:3000/login', user)
+      .pipe(
+        catchError(() => {
+          alert('incorrect email or password');
+          return of({} as IuserResponse);
+        })
+      );
   }
 }

@@ -5,9 +5,15 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
+import { Observable } from 'tinymce';
 import { JobsService } from '../../services/jobs.service';
+
+interface dummy {
+  jobs: Ijob[];
+}
 
 @Component({
   selector: 'app-main',
@@ -19,24 +25,22 @@ export class MainComponent implements OnInit {
   jobs: BehaviorSubject<Ijob[]> = new BehaviorSubject([] as Ijob[]);
   filters = new BehaviorSubject<string[]>([]);
 
-  constructor(private jobsService: JobsService) {}
+  constructor(
+    private jobsService: JobsService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   today = formatDate(new Date(), 'yyyy-MM-dd', 'en').toString().split('-');
 
   ngOnInit(): void {
-    this.jobsService.getJobs().subscribe((value) => {
-      value.map((item: Ijob) => {
-        let itemDeadline = item.deadline.toString().split('-');
-        if (itemDeadline[0] <= this.today[0]) {
-          if (itemDeadline[1] <= this.today[1]) {
-            if (itemDeadline[2] < this.today[2]) {
-              this.deleteJob(item.id);
-            }
-          }
-        }
-      });
-      this.jobs.next(value);
-    });
+    // this.activatedRoute.data.subscribe((value: (dummy)) => {
+    //   this.jobs.next(value.jobs);
+    // });
+    this.jobs.next(this.activatedRoute.snapshot.data['jobs']);
+    // this.jobsService.getJobs().subscribe((value) => {
+    //   console.log(value);
+    //   this.jobs.next(value);
+    // });
   }
 
   deleteJob(id: number) {

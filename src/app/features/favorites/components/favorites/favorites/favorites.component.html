@@ -8,9 +8,14 @@
           </div>
           <div class="info__info">
             <div class="info__header">
-              <span class="info__header-name">{{ job.company }}</span>
+              <span class="info__header-name" (click)="openJob(job)">{{
+                job.company
+              }}</span>
               <span *ngIf="checkDate(job)" class="info__header-tag new"
                 >NEW!</span
+              >
+              <span *ngIf="false" class="info__header-tag featured"
+                >FEATURED</span
               >
             </div>
             <div class="info__title">{{ job.title }}</div>
@@ -18,6 +23,7 @@
               <li class="info__about-item">{{ getPostDate(job) }}</li>
               <li class="info__about-item">{{ job.workTime }}</li>
               <li class="info__about-item">{{ job.location }}</li>
+              <li class="info__about-item">Deadline: {{ job.deadline }}</li>
             </ul>
           </div>
         </div>

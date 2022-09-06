@@ -1,7 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IuserResponse } from 'src/app/shared/interfaces/job.interface';
+import {
+  IloginUser,
+  IuserResponse,
+} from 'src/app/shared/interfaces/job.interface';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -24,17 +27,21 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   loginUser() {
-    this.loginService
-      .loginUser(this.loginFormGroup.value)
-      .subscribe((value: IuserResponse) => {
-        this.loginService.loggedUser = value.user;
-        this.router.navigate(['/user']);
-        localStorage.setItem('token', JSON.stringify(value));
-        this.loginService.isLogged = true;
-      });
+    if (this.loginFormGroup.valid) {
+      this.loginService
+        .loginUser(this.loginFormGroup.value as IloginUser)
+        .subscribe((value: IuserResponse) => {
+          if (value.user) {
+            console.log(value);
+            this.loginService.loggedUser = value;
+            this.router.navigate(['/user']);
+            localStorage.setItem('token', JSON.stringify(value));
+            this.loginService.isLogged = true;
+          }
+        });
+    }
   }
   showPasswordIcon = true;
-
   showPassword() {
     if (this.passwordType === 'password') {
       this.passwordType = 'text';

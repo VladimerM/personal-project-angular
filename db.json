@@ -218,8 +218,8 @@
       "location": "Remote",
       "information": "This is the best job you will see in the world",
       "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
+      "heartSrc": "assets/images/icons/filled-heart.svg",
+      "heartFilled": true,
       "datas": [
         "frontend",
         "senior",
@@ -369,6 +369,12 @@
       "jobs": [],
       "id": 1,
       "password": "$2a$10$KQzPQK8EdwQS2HE/J5u/3eCaBCyf/LfAd8Xuc356D/u2GDkzUu8j2"
+    },
+    {
+      "email": "sdsdfsdf@gmail.com",
+      "password": "$2a$10$Qc4g/sUqz7EY9fxS3i4DCu3sdwsjnRrWHoP4HazurwLsdg5mIMW3K",
+      "name": "adsfsfsdf",
+      "id": 2
     }
   ]
 }

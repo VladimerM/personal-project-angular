@@ -18,7 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent implements OnInit {
-  @Input() jobs: Ijob[] = [] as Ijob[];
+  @Input() jobs!: Ijob[];
   @Output() filterItem = new EventEmitter<string>();
 
   heartFilled = false;

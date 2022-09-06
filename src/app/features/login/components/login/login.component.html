@@ -1,4 +1,7 @@
 <div class="wrapper">
+  <div class="rocket">
+    <img src="assets/images/bg-images/rocket.png" alt="" />
+  </div>
   <form class="login" [formGroup]="loginFormGroup">
     <h1 class="login__title">Log In</h1>
     <div class="login__inputs">
@@ -80,20 +83,14 @@
           "
           class="error__message"
         >
-          Password must be at least 8 characters <br />
-          in length
+          Password must be at least 8 characters in length
         </p>
       </div>
 
       <p class="to-register">
         New to Best-Page? <a routerLink="/register"> Create Account</a>
       </p>
-      <button
-        class="login__submit"
-        (click)="loginUser()"
-        [disabled]="!this.loginFormGroup.valid"
-        type="submit"
-      >
+      <button class="login__submit" (click)="loginUser()" type="submit">
         Log In
       </button>
     </div>

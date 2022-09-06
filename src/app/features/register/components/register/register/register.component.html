@@ -1,29 +1,32 @@
 <div class="wrapper">
+  <div class="rocket">
+    <img src="assets/images/bg-images/rocket.png" alt="" />
+  </div>
   <form class="register" [formGroup]="registerFormGroup">
     <h1 class="register__title">Register</h1>
     <div class="register__inputs">
       <input
         type="email"
         class="register__input"
-        placeholder="Email"
+        placeholder="Email*"
         formControlName="email"
       />
       <input
         type="text"
         class="register__input"
-        placeholder="Company Name"
+        placeholder="Company Name*"
         formControlName="name"
       />
       <ng-container formGroupName="passwordGroup"
         ><input
           type="password"
           class="register__input"
-          placeholder="Password"
+          placeholder="Password*"
           formControlName="password" />
         <input
           type="password"
           class="register__input"
-          placeholder="Confirm Password"
+          placeholder="Confirm Password*"
           formControlName="confPassword"
       /></ng-container>
 

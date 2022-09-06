@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BlockLoginGuard } from './core/guards/block-login.guard';
 import { LoginGuard } from './core/guards/login.guard';
 import { JobComponent } from './features/main/components/job/job.component';
-import { MainComponent } from './features/main/components/main/main.component';
+import { JobsResolverService } from './features/main/resolvers/jobs-resolver.service';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () =>
       import('./features/main/main.module').then((m) => m.MainModule),
+    resolve: { jobs: JobsResolverService },
   },
   {
     path: 'register',
@@ -21,12 +23,13 @@ const routes: Routes = [
       import('./features/register/register.module').then(
         (m) => m.RegisterModule
       ),
+    canLoad: [BlockLoginGuard],
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./features/login/login.module').then((m) => m.LoginModule),
-    canLoad: [!LoginGuard],
+    canLoad: [BlockLoginGuard],
   },
   {
     path: 'favorites',

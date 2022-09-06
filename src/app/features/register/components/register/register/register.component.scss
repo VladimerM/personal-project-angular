@@ -1,7 +1,21 @@
 .wrapper {
   max-width: 1148px;
   padding: 15px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.rocket {
+  width: 200px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 540px) {
+    display: none;
+  }
 }
 .register {
   display: flex;
