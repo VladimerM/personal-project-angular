@@ -33,14 +33,7 @@ export class MainComponent implements OnInit {
   today = formatDate(new Date(), 'yyyy-MM-dd', 'en').toString().split('-');
 
   ngOnInit(): void {
-    // this.activatedRoute.data.subscribe((value: (dummy)) => {
-    //   this.jobs.next(value.jobs);
-    // });
     this.jobs.next(this.activatedRoute.snapshot.data['jobs']);
-    // this.jobsService.getJobs().subscribe((value) => {
-    //   console.log(value);
-    //   this.jobs.next(value);
-    // });
   }
 
   deleteJob(id: number) {
