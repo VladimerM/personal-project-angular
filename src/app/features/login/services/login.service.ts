@@ -17,7 +17,10 @@ export class LoginService {
 
   loginUser(user: IloginUser) {
     return this.http
-      .post<IuserResponse>('http://localhost:3000/login', user)
+      .post<IuserResponse>(
+        'https://my-frix-just-project.herokuapp.com/login',
+        user
+      )
       .pipe(
         catchError(() => {
           alert('incorrect email or password');

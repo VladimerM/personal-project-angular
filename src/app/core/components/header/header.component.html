@@ -22,9 +22,13 @@
             ><i class="fa-solid fa-circle-user"></i>Log In</a
           >
         </li>
-        <li *ngIf="isLogged()" class="menu__item user" (click)="toggleBurger()">
+        <li
+          *ngIf="isLogged() || true"
+          class="menu__item user"
+          (click)="toggleBurger()"
+        >
           <a routerLink="user" routerLinkActive="active"
-            ><i class="fa-solid fa-circle-user"></i> {{ getUser() }}</a
+            ><i class="fa-solid fa-circle-user"></i> {{ getUser() }} User</a
           >
         </li>
         <li

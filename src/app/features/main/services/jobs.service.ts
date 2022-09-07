@@ -13,7 +13,9 @@ export class JobsService {
 
   getJobs() {
     return this.http
-      .get<Ijob[]>('http://localhost:3000/jobs?_sort=date&_order=desc')
+      .get<Ijob[]>(
+        'https://my-frix-just-project.herokuapp.com/jobs?_sort=date&_order=desc'
+      )
       .pipe(
         tap((value) => {
           value.map((item: Ijob) => {
@@ -38,35 +40,41 @@ export class JobsService {
   }
 
   getJob(id: number) {
-    return this.http.get<Ijob>('http://localhost:3000/jobs/' + id).pipe(
-      catchError((err) => {
-        alert(
-          'Something went wrong please try again later. For detailed information look at console'
-        ),
-          console.log(err.message);
-        return of({} as Ijob);
-      })
-    );
+    return this.http
+      .get<Ijob>('https://my-frix-just-project.herokuapp.com/jobs/' + id)
+      .pipe(
+        catchError((err) => {
+          alert(
+            'Something went wrong please try again later. For detailed information look at console'
+          ),
+            console.log(err.message);
+          return of({} as Ijob);
+        })
+      );
   }
 
   editJobs(id: number, data: Ijob) {
-    return this.http.put<Ijob>('http://localhost:3000/jobs/' + id, data).pipe(
-      catchError((err) => {
-        alert(
-          'Something went wrong please try again later. For detailed information look at console'
-        ),
-          console.log(err.message);
-        return of(false);
-      })
-    );
+    return this.http
+      .put<Ijob>('https://my-frix-just-project.herokuapp.com/jobs/' + id, data)
+      .pipe(
+        catchError((err) => {
+          alert(
+            'Something went wrong please try again later. For detailed information look at console'
+          ),
+            console.log(err.message);
+          return of(false);
+        })
+      );
   }
 
   deleteJob(id: number) {
-    return this.http.delete<Ijob>('http://localhost:3000/jobs/' + id).pipe(
-      catchError((err) => {
-        console.log(err.message);
-        return of(null);
-      })
-    );
+    return this.http
+      .delete<Ijob>('https://my-frix-just-project.herokuapp.com/jobs/' + id)
+      .pipe(
+        catchError((err) => {
+          console.log(err.message);
+          return of(null);
+        })
+      );
   }
 }
