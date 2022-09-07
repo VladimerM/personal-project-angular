@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
         .loginUser(this.loginFormGroup.value as IloginUser)
         .subscribe((value: IuserResponse) => {
           if (value.user) {
-            console.log(value);
             this.loginService.loggedUser = value;
             this.router.navigate(['/user']);
             localStorage.setItem('token', JSON.stringify(value));

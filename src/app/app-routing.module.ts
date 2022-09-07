@@ -8,14 +8,13 @@ import { JobsResolverService } from './features/main/resolvers/jobs-resolver.ser
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
-    path: 'main',
+    path: 'home',
     loadChildren: () =>
       import('./features/main/main.module').then((m) => m.MainModule),
-    resolve: { jobs: JobsResolverService },
   },
   {
     path: 'register',

@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { LoaderService } from 'src/app/core/components/header/service/loader.service';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
 import { FavoritesService } from '../../../services/favorites.service';
 
@@ -21,7 +22,8 @@ export class FavoritesComponent implements OnInit {
 
   constructor(
     private favoriteService: FavoritesService,
-    private router: Router
+    private router: Router,
+    private loaderService: LoaderService
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class FavoritesComponent implements OnInit {
         this.favorites.next(arr);
       });
     }
+
     this.favoritesIds = JSON.parse(localStorage.getItem('favorites')!);
   }
 

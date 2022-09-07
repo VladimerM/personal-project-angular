@@ -5,8 +5,16 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+} from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { LoaderService } from 'src/app/core/components/header/service/loader.service';
 import { Ijob } from 'src/app/shared/interfaces/job.interface';
 import { Observable } from 'tinymce';
 import { JobsService } from '../../services/jobs.service';
@@ -27,13 +35,17 @@ export class MainComponent implements OnInit {
 
   constructor(
     private jobsService: JobsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private loaderService: LoaderService
   ) {}
 
   today = formatDate(new Date(), 'yyyy-MM-dd', 'en').toString().split('-');
 
   ngOnInit(): void {
-    this.jobs.next(this.activatedRoute.snapshot.data['jobs']);
+    this.jobsService.getJobs().subscribe((value) => {
+      this.jobs.next(value);
+    });
   }
 
   deleteJob(id: number) {

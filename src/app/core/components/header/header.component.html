@@ -10,7 +10,7 @@
     <nav class="header__menu" [ngClass]="{ active: burgerOpened }">
       <ul class="menu__list">
         <li class="menu__item" (click)="toggleBurger()">
-          <a routerLink="main" routerLinkActive="active">Home <span></span></a>
+          <a routerLink="home" routerLinkActive="active">Home <span></span></a>
         </li>
         <li class="menu__item" (click)="toggleBurger()">
           <a routerLink="favorites" routerLinkActive="active"
@@ -24,7 +24,7 @@
         </li>
         <li *ngIf="isLogged()" class="menu__item user" (click)="toggleBurger()">
           <a routerLink="user" routerLinkActive="active"
-            ><i class="fa-solid fa-circle-user"></i> {{ userName }}</a
+            ><i class="fa-solid fa-circle-user"></i> {{ getUser() }}</a
           >
         </li>
         <li
@@ -38,4 +38,7 @@
       </ul>
     </nav>
   </header>
+  <div class="loader" *ngIf="isLoading() | async">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
 </div>

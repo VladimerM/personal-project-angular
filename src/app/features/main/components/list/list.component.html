@@ -41,12 +41,7 @@
       />
     </div>
   </div>
-  <h1 *ngIf="!jobs.length">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint eaque
-    consequuntur officia nostrum amet, placeat adipisci culpa dolorum, laborum
-    deleniti, illum voluptatibus fuga magni facilis quos animi consectetur
-    distinctio aspernatur.
-  </h1>
+  <h1 *ngIf="!jobs.length" class="message">Please wait.</h1>
 
   <pagination-controls
     previousLabel="Prev"
