@@ -22,28 +22,33 @@ export class FavoritesComponent implements OnInit {
 
   constructor(
     private favoriteService: FavoritesService,
-    private router: Router,
-    private loaderService: LoaderService
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    for (let favorite of JSON.parse(localStorage.getItem('favorites')!)) {
-      this.favoriteService.getFavorite(favorite).subscribe((value) => {
-        let arr = this.favorites.getValue();
-        arr.unshift(value);
-        this.favorites.next(arr);
-      });
+    if (localStorage.getItem('favorites')) {
+      for (let favorite of JSON.parse(localStorage.getItem('favorites')!)) {
+        this.favoriteService.getFavorite(favorite).subscribe((value) => {
+          let arr: Ijob[] = this.favorites.getValue();
+          arr.unshift(value);
+          this.favorites.next(arr);
+        });
+      }
     }
 
     this.favoritesIds = JSON.parse(localStorage.getItem('favorites')!);
   }
 
-  onClickChangeHeart(job: any) {
-    job.heartSrc = 'assets/images/icons/heart.svg';
-    job.heartFilled = !job.heartFilled;
-    this.favoritesIds.splice(this.favoritesIds.indexOf(job.id), 1);
-    localStorage.setItem('favorites', JSON.stringify(this.favoritesIds));
-    this.favoriteService.editJobs(job.id, job).subscribe();
+  onClickChangeHeart(job: Ijob) {
+    if (job.heartSrc !== 'assets/images/icons/heart.svg') {
+      job.heartSrc = 'assets/images/icons/heart.svg';
+      this.favoritesIds.splice(this.favoritesIds.indexOf(job.id), 1);
+      localStorage.setItem('favorites', JSON.stringify(this.favoritesIds));
+    } else {
+      job.heartSrc = 'assets/images/icons/filled-heart.svg';
+      this.favoritesIds.unshift(job.id);
+      localStorage.setItem('favorites', JSON.stringify(this.favoritesIds));
+    }
   }
 
   checkDate(job: Ijob): boolean {

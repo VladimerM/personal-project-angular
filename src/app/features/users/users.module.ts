@@ -6,9 +6,10 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserJobsComponent } from './components/user-jobs/user-jobs.component';
 import { SharedModule } from '../../shared/shared.module';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { DeleteDirective } from './directive/delete.directive';
 
 @NgModule({
-  declarations: [UserComponent, UserFormComponent, UserJobsComponent],
+  declarations: [UserComponent, UserFormComponent, UserJobsComponent, DeleteDirective],
   imports: [
     CommonModule,
     SharedModule,

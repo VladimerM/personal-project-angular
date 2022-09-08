@@ -64,4 +64,20 @@ ul li {
     text-align: center;
     margin-bottom: 35px;
   }
+
+  &__button {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    button {
+      padding: 5px 10px;
+      background-color: rgb(12, 80, 206);
+      border-radius: 5px;
+      width: 120px;
+      a {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+  }
 }

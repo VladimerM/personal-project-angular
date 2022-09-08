@@ -33,18 +33,14 @@ export class ListComponent implements OnInit {
   }
 
   onClickChangeHeart(job: Ijob): void {
-    if (!job.heartFilled) {
+    if (job.heartSrc !== 'assets/images/icons/filled-heart.svg') {
       job.heartSrc = 'assets/images/icons/filled-heart.svg';
-      job.heartFilled = !job.heartFilled;
       this.favorites.push(job.id);
       localStorage.setItem('favorites', JSON.stringify(this.favorites));
-      this.jobsService.editJobs(job.id, job).subscribe();
     } else {
       job.heartSrc = 'assets/images/icons/heart.svg';
-      job.heartFilled = !job.heartFilled;
       this.favorites.splice(this.favorites.indexOf(job.id), 1);
       localStorage.setItem('favorites', JSON.stringify(this.favorites));
-      this.jobsService.editJobs(job.id, job).subscribe();
     }
   }
 

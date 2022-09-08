@@ -11,10 +11,7 @@ export class RegisterService {
 
   registerUser(user: Iregister) {
     return this.http
-      .post<Iregister>(
-        'https://my-frix-just-project.herokuapp.com/register',
-        user
-      )
+      .post<Iregister>('http://localhost:3000/register', user)
       .pipe(
         catchError(() => {
           alert('Failed to register user, please try again later');

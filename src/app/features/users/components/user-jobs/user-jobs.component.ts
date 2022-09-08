@@ -28,8 +28,9 @@ export class UserJobsComponent implements OnInit {
     this.router.navigate([`/main/jobs/${job.id}`]);
   }
 
-  onClickDelete(job: Ijob) {
+  onClickDelete(job: Ijob, item: any) {
     this.jobInfo.emit(job);
+    console.log(item.target);
   }
 
   getPostDate(job: Ijob) {

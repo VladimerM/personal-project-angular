@@ -1,6 +1,6 @@
 <div class="container" [ngClass]="{ active: burgerOpened }">
   <header class="header">
-    <a class="logo" routerLink="main"
+    <a class="logo" routerLink="home"
       ><img src="assets/images/logo/logo.png" alt="sasa"
     /></a>
     <div class="header__burger" (click)="blockScroll()">
@@ -22,13 +22,9 @@
             ><i class="fa-solid fa-circle-user"></i>Log In</a
           >
         </li>
-        <li
-          *ngIf="isLogged() || true"
-          class="menu__item user"
-          (click)="toggleBurger()"
-        >
+        <li *ngIf="isLogged()" class="menu__item user" (click)="toggleBurger()">
           <a routerLink="user" routerLinkActive="active"
-            ><i class="fa-solid fa-circle-user"></i> {{ getUser() }} User</a
+            ><i class="fa-solid fa-circle-user"></i> {{ getUser() }}</a
           >
         </li>
         <li

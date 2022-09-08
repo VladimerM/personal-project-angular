@@ -16,7 +16,7 @@
           <li class="info__about-item">{{ getPostDate(job) }}</li>
           <li class="info__about-item">{{ job.workTime }}</li>
           <li class="info__about-item">{{ job.location }}</li>
-          <li class="info__about-item">{{ job.deadline }}</li>
+          <li class="info__about-item">Deadline: {{ job.deadline }}</li>
         </ul>
       </div>
     </div>
@@ -25,8 +25,8 @@
         {{ data }}
       </li>
     </ul>
-    <div class="job__delete">
-      <span (click)="onClickDelete(job)"
+    <div class="job__delete" appDelete>
+      <span (click)="onClickDelete(job, $event)"
         ><i class="fa-solid fa-xmark"></i
       ></span>
     </div>

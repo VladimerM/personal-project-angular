@@ -9,11 +9,12 @@
           <div class="job__title">{{ job.title }}</div>
           <div class="job__location">{{ job.location }}</div>
           <div class="job__location">{{ job.workTime }}</div>
+          <div class="job__location">{{ job.owner }}</div>
         </div>
 
-        <!-- <div class="job__main-right">
-          <img src="{{ job.img }}" alt="" />
-        </div> -->
+        <div class="job__main-right">
+          <img [src]="job.img" alt="" />
+        </div>
       </div>
 
       <div class="info-title">Detailed Information</div>
@@ -22,9 +23,11 @@
         class="job__information"
         [innerHTML]="job.information | safeHtml"
       ></div>
-      <button class="job__button">
-        <a href="mailto:{{ job.owner }}">Send CV</a>
-      </button>
+      <div class="job__button">
+        <button>
+          <a href="mailto:{{ job.owner }}">Send CV</a>
+        </button>
+      </div>
 
       <br />
     </div>
