@@ -17,16 +17,16 @@ import { LoginService } from 'src/app/features/login/services/login.service';
 })
 export class UserFormComponent implements OnInit {
   jobFormGroup = new FormGroup({
-    company: new FormControl('', [Validators.required]),
-    img: new FormControl('', [Validators.required]),
-    title: new FormControl('', [Validators.required]),
-    workTime: new FormControl('', [Validators.required]),
-    location: new FormControl('', [Validators.required]),
-    datas: new FormControl('', [Validators.required]),
-    information: new FormControl('', [Validators.required]),
-    deadline: new FormControl('', [Validators.required]),
+    company: new FormControl<string>('', [Validators.required]),
+    img: new FormControl<string>('', [Validators.required]),
+    title: new FormControl<string>('', [Validators.required]),
+    workTime: new FormControl<string>('', [Validators.required]),
+    location: new FormControl<string>('', [Validators.required]),
+    datas: new FormControl<string>('', [Validators.required]),
+    information: new FormControl<string>('', [Validators.required]),
+    deadline: new FormControl<string>('', [Validators.required]),
   });
-  @Output() jobInfo = new EventEmitter<any>();
+  @Output() jobInfo = new EventEmitter<{}>();
 
   constructor(private loginService: LoginService) {}
   today = formatDate(new Date(), 'yyyy-MM-dd', 'en');
