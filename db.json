@@ -22,48 +22,6 @@
       "id": 6
     },
     {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941246928,
-      "owner": "frixman@gmail.com",
-      "id": 9
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941246228,
-      "owner": "frixman@gmail.com",
-      "id": 15
-    },
-    {
       "company": "just Company",
       "img": "https://cdn-icons-png.flaticon.com/512/1256/1256397.png?w=360",
       "title": "dsdsss",
@@ -207,6 +165,25 @@
       "date": 1662650262999,
       "owner": "frixman@gmail.com",
       "id": 25
+    },
+    {
+      "company": "HH Recruitment",
+      "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg",
+      "title": "Back-End Software Engineer/Java",
+      "workTime": "Full-time",
+      "location": "Remtoe",
+      "information": "<p><strong>Recruitment Agency HH&nbsp;</strong>(<a href=\"http://www.hh.ge/\" target=\"_blank\" rel=\"noopener\">www.HH.ge</a>)&nbsp; is announcing a selection for the position of&nbsp;<strong>Back-End Software Engineer/Java&nbsp;</strong>for&nbsp;Girteka Global Business Services</p>\n<p>&nbsp;</p>\n<p>Girteka Logistics is the largest asset-based logistics provider in Europe, utilizing its fleet of&nbsp;more than&nbsp;8,000 trucks and 8,700 trailers to provide road transportation solutions for its customers across the continent. With a wide-reaching network throughout Europe, the company manages to complete more than 820,000 full truck load (FTL) deliveries annually, while sustaining a high quality of the services offered.&nbsp;To support its ambitious growth plans Girteka is opening Girteka Global Business Services Centre in Tbilisi.</p>\n<p><a href=\"https://www.girteka.eu/\">https://www.girteka.eu/</a></p>\n<p>&nbsp;</p>\n<p>Job Description</p>\n<ul>\n<li>Help your colleagues getting rid of the boring tasks by optimizing and automating company&rsquo;s business processes;</li>\n<li>Work in a cross-functional squad, collaborate closely with your front-end counterparts and a business analyst;</li>\n<li>Be responsible for all back-end development lifecycle phases &ndash; from design to deployment;</li>\n<li>Deliver well-architected, secure, and scalable solutions;</li>\n<li>Inspire colleagues by setting an example of professionalism and proper work ethics;</li>\n<li>Contribute to defining the development standards and best practices.</li>\n</ul>\n<p>&nbsp;</p>\n<p>Main Requirements:</p>\n<ul>\n<li>Desirable &ndash; Bachelor&rsquo;s Degree;</li>\n<li>Minimum 3+ years of experience as Back -End Software Engineer, Java Developer or/and similar positions;</li>\n<li>Development experience with Java stack building APIs;</li>\n<li>Knowledge of Spring Framework, Hibernate ORM, Maven;&nbsp;</li>\n<li>Experience in defining or contributing to solution architecture;</li>\n<li>Willigness to master workflow and decision automation with Camunda&nbsp;</li>\n<li>Knowledge of English language fluently;</li>\n<li>Experience with cloud platforms is an advantage;</li>\n<li>Experience with BPM frameworks - Desirable;</li>\n<li>Experience with scrum and agile development is an advantage;</li>\n</ul>\n<p>&nbsp;</p>\n<p>If you are interested in this position, please, apply to the vacancy by &ldquo;Send CV&rdquo; Button.</p>",
+      "deadline": "2022-10-06",
+      "heartSrc": "assets/images/icons/heart.svg",
+      "datas": [
+        "English",
+        "Bachelor",
+        "engineer",
+        "java"
+      ],
+      "date": 1662715889848,
+      "owner": "frixman@gmail.com",
+      "id": 26
     }
   ],
   "users": [

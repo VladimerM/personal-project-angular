@@ -8,7 +8,6 @@ export interface Ijob {
   information: string;
   heartSrc: string;
   id: number;
-  heartFilled: boolean;
   date: number;
   deadline: string;
   owner: string;

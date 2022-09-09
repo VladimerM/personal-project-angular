@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.loginService.isLogged = false;
     localStorage.removeItem('token');
-    this.router.navigate(['/main']);
+    this.router.navigate(['/home']);
   }
 
   isLogged() {

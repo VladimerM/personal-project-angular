@@ -29,10 +29,9 @@ export class UserComponent implements OnInit {
       this.userService.deleteJob(job.id).subscribe(() => {
         this.updateLyst();
       });
-    }, 500);
+    }, 400);
   }
   addJob(job: Ijob) {
-    job.owner = this.loginService.loggedUser.user.email;
     this.userService.postJob(job).subscribe(() => {
       this.updateLyst();
     });
