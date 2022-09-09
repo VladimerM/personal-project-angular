@@ -17,6 +17,16 @@ header {
   }
 }
 
+@keyframes delete {
+  from {
+    left: 0;
+    height: 100%;
+  }
+  to {
+    left: 5000px;
+    height: 0%;
+  }
+}
 .job {
   background-color: #fff;
   width: 100%;
@@ -28,6 +38,12 @@ header {
   justify-content: space-between;
   position: relative;
   gap: 20px;
+  transition: 0.3s;
+
+  &.delete {
+    // animation-name: delete;
+    animation: delete 0.5s;
+  }
 
   @media (max-width: 840px) {
     flex-wrap: wrap;

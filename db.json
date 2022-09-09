@@ -17,51 +17,9 @@
         "css",
         "html"
       ],
-      "date": 1661341246228,
-      "owner": "frixman@gmail.com",
-      "id": 5
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
       "date": 1661941246226,
       "owner": "frixman@gmail.com",
       "id": 6
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941246248,
-      "owner": "frixman@gmail.com",
-      "id": 7
     },
     {
       "company": "pegani",
@@ -93,90 +51,6 @@
       "information": "This is the best job you will see in the world",
       "deadline": "2022-09-10",
       "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": true,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941244228,
-      "owner": "frixman@gmail.com",
-      "id": 11
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941246628,
-      "owner": "frixman@gmail.com",
-      "id": 12
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941240228,
-      "owner": "frixman@gmail.com",
-      "id": 13
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941546228,
-      "owner": "frixman@gmail.com",
-      "id": 14
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
       "heartFilled": false,
       "datas": [
         "frontend",
@@ -188,47 +62,6 @@
       "date": 1661941246228,
       "owner": "frixman@gmail.com",
       "id": 15
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": false,
-      "datas": [
-        "frontend",
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941246228,
-      "owner": "frixman@gmail.com",
-      "id": 15
-    },
-    {
-      "company": "pegani",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTwbHVx8xLseVlqBpLRHuvuW-vLHwfp2U4g&usqp=CAU",
-      "title": "Frontend Developer",
-      "workTime": "Full Time",
-      "location": "Remote",
-      "information": "This is the best job you will see in the world",
-      "deadline": "2022-09-10",
-      "heartSrc": "assets/images/icons/heart.svg",
-      "heartFilled": true,
-      "datas": [
-        "senior",
-        "javascript",
-        "css",
-        "html"
-      ],
-      "date": 1661941246228,
-      "owner": "frixman@gmail.com",
-      "id": 18
     },
     {
       "company": "just Company",

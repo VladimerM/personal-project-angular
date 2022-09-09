@@ -25,11 +25,11 @@ export class UserComponent implements OnInit {
   }
 
   onClickDelete(job: IuserJob) {
-    if (confirm('You sure want to delete vacancie')) {
+    setTimeout(() => {
       this.userService.deleteJob(job.id).subscribe(() => {
         this.updateLyst();
       });
-    }
+    }, 500);
   }
   addJob(job: Ijob) {
     job.owner = this.loginService.loggedUser.user.email;
