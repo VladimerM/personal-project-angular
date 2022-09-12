@@ -26,7 +26,7 @@ export class UserFormComponent implements OnInit {
     information: new FormControl<string>('', [Validators.required]),
     deadline: new FormControl<string>('', [Validators.required]),
   });
-  @Output() jobInfo = new EventEmitter<{}>();
+  @Output() jobInfo = new EventEmitter<any>();
 
   constructor(private loginService: LoginService) {}
   today = formatDate(new Date(), 'yyyy-MM-dd', 'en');
